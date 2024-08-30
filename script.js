@@ -98,21 +98,125 @@
 
 // &5
 
-const number = prompt('insert rundom number');
+// const number = prompt('insert rundom number');
 
-getdividers(number);
+// getdividers(number);
 
-function getdividers(number){
-    let result = "";
+// function getdividers(number){
+//     let result = "";
 
-    if(!+number){
-        result = "none"
-    }else{
-        for (let i = 0; i <= number; i++) {
-            number % i === 0 ? result += `${i} ` : result   
-        }
+//     if(!+number){
+//         result = "none"
+//     }else{
+//         for (let i = 0; i <= number; i++) {
+//             number % i === 0 ? result += `${i} ` : result   
+//         }
+//     }
+
+
+//     alert(result.trim())
+// }
+
+// normal 1
+
+
+
+// definePolindrom()
+
+
+// function definePolindrom() {
+//     const number = prompt('insert rundom a five-digit number');
+
+//     if(!+number && number.length <5){
+//         alert('once more!')
+//         definePolindrom()
+//     }
+//     else{
+//         const result = number.split("").reverse().join("");
+//         if(+result === +number){
+//             alert("you got polindrom")
+//         }else{
+//             alert('once more!')
+//             definePolindrom()
+//         }
+//     }
+// }
+
+// &2
+
+
+// getPrice()
+
+// function getPrice() {
+//     const money = +prompt("insert your sum");
+//     let pay;
+
+//     if (money < 200) {
+//         pay = money - money * 0.03;
+//     } else if (money > 300) {
+//         pay = money - money * 0.05;
+//     } else if (money > 200) {
+//         pay = money - money * 0.04;
+//     } else {
+//         pay = money;
+//     }
+
+//     alert(`You will pay ${pay}$`);
+
+// }
+
+// &3 Запитай у користувача 10 чисел і порахуй, скільки він ввів додатніх, від’ємних і нулів. При цьому також порахуй, скільки з них парних і непарних. Виведи статистику на екран. Враховуй, що достатньо однієї змінної (не 10) для введення чисел користувачем.
+
+// countNumbers()
+
+// function countNumbers() {
+//     const numbers = prompt("insert rundom numbers as you whont with ','");
+//     // const numbers = '-1,2,3,4,5,0,0,0,2,2,-5,s';
+//     let resultArray = {
+//         positive: 0,
+//         negative: 0,
+//         zero: 0,
+//         even: 0,
+//         odd: 0,
+//         errors: 0,
+//         count: 0,
+//     }
+//     if (!numbers) {
+//         alert('insert any numbers!!')
+//         countNumbers()
+//     } else if (numbers.length > 0) {
+//         const splitNumbers = numbers.split(',');
+//         for (let i = 0; i < splitNumbers.length; i++) {
+//             resultArray.count += 1;
+//             if (+splitNumbers[i] === 0) resultArray.zero += 1;
+//             else if (!!+splitNumbers[i] && +splitNumbers[i] != 0) {
+//                 if (+splitNumbers[i] % 2 === 0) {
+//                     resultArray.even += 1;
+//                     +splitNumbers[i] > 0 ? resultArray.positive += 1 : resultArray.negative += 1
+//                 } else {
+//                     resultArray.odd += 1;
+//                     +splitNumbers[i] < 0 ? resultArray.positive += 1 : resultArray.negative += 1
+//                 }
+//             } else {
+//                 resultArray.errors += 1;
+//             }
+//         }
+
+//     }
+//     console.table(resultArray)
+// }
+// &4 Зацикли відображення днів тижня таким чином: «День тижня. Хочеш побачити наступний день? » і так до тих пір, поки користувач натискає OK.
+
+const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
+showDays();
+var day = 0;
+
+function showDays() {
+
+    for (let i = 0; i < days.length; i++) {
+        alert(days[i])
     }
-
-
-    alert(result.trim())
+    day === 7 ? day++ : day = 0;
+    showDays()
 }
