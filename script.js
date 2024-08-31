@@ -207,16 +207,79 @@
 // }
 // &4 Зацикли відображення днів тижня таким чином: «День тижня. Хочеш побачити наступний день? » і так до тих пір, поки користувач натискає OK.
 
-const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+// const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
-showDays();
-var day = 0;
+// let day = 1;
 
-function showDays() {
+// function showDays() {
 
-    for (let i = 0; i < days.length; i++) {
-        alert(days[i])
+//     alert(`${days[day -1]} , ${day}`)
+//     day !== days.length? day++ : day = 1;
+//     showDays()
+// }
+// showDays();
+
+// maximum 
+
+
+
+// function playGame() {
+//     const rundomNumber = Math.floor(Math.random() * 100) + 1;
+//     let count = 0;
+//     console.log(rundomNumber);
+//     let number = prompt("we have rundom from 1 to 100, find him");
+
+//     (function choise(){
+//         count++;
+//         if(+rundomNumber > +number){
+//             number = prompt("wrong, its biger ... try once more");
+//             choise();
+//         }else if(+rundomNumber < +number){
+//             number = prompt("wrong, its less ... try once more");
+//             choise();
+//         }else if(rundomNumber === +number){
+//             alert(`good job its ${rundomNumber}, and you try ${count} times`);
+//         }else{
+//             number = prompt("wrong, its not number ... try once more");
+//             choise();
+//         }
+//     })()
+// }
+// playGame()
+
+function playGame() {
+    const rundomNumber = Math.floor(Math.random() * 100) + 1;
+    let count = 0;
+    let number;
+
+    console.log(rundomNumber);
+
+    while (true) {
+        number = prompt("we have rundom from 1 to 100, find him");
+
+        if (number === null) {
+            alert("you give up");
+            break;
+        }
+
+        number = +number;
+
+        if (isNaN(number) || number < 1 || number > 100) {
+            alert("insert normal number");
+            continue;
+        }
+
+        count++;
+
+        if (number < rundomNumber) {
+            alert("wrong, its biger.");
+        } else if (number > rundomNumber) {
+            alert("wrong, its less");
+        } else {
+            alert(`good job its ${rundomNumber}, and you try ${count} times`);
+            break;
+        }
     }
-    day === 7 ? day++ : day = 0;
-    showDays()
 }
+
+playGame();
